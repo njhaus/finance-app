@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS$50 Quote
+{% endblock %}
+
+{% block main %}
+    <section>
+      <div>
+        <table class="table quote-table">
+            <thead>
+              <tr>
+                <th scope="col">Stock</th>
+                <th scope="col">Current Price</th>
+                <!-- <th scope="col"></th> -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{symbol}}</td>
+                <td>{{price}}</td>
+                <!-- <td><button>Buy</button></td> -->
+              </tr>
+            </tbody>
+          </table>
+          <a href="/buy"><button class="btn btn-primary">Buy {{ symbol }}</button></a>
+      </div>
+    </section>
+
+{% endblock %}

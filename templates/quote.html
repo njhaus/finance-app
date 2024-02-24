@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS$50 Quote
+{% endblock %}
+
+{% block main %}
+    <section>
+        <div>
+            <h2 class="section-title">Quote</h2>
+            <form method="post" action="/quote">
+                <label for="symbol">Enter a stock symbol:</label>
+                <input name="symbol" type="text" maxlength="5" id="symbol" required placeholder="AAPL">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

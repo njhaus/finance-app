@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS$50 Quote
+{% endblock %}
+
+{% block main %}
+    <section>
+        <div>
+            <h2 class="section-title">Buy</h2>
+            <form method="post" action="/buy">
+                <label for="symbol">Enter a stock symbol:</label>
+                <input name="symbol" type="text" maxlength="5" id="symbol" required placeholder="AAPL"></input>
+                <label for="shares">Enter a number of shares:</label>
+                <input name="shares" type="number" id="shares" required placeholder="1" min="1"></input>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

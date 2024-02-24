@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS$50 Quote
+{% endblock %}
+
+{% block main %}
+    <section>
+        <div>
+            <h2 class="section-title">Sell</h2>
+            <form method="post" action="/sell">
+                <label for="symbol">Enter a stock symbol:</label>
+                <select name="symbol" required >
+                        <option value="" disabled selected>Select a stock</option>
+                    {%for stock in stocks%}
+                        <option value="{{stock['symbol']}}">{{stock['symbol']}}</option>
+                    {%endfor%}
+                </select>
+                <label for="shares">Enter a number of shares:</label>
+                <input name="shares" type="number" id="shares" required placeholder="1" min="1"></input>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}

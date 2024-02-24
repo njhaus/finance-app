@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS$50
+{% endblock %}
+
+{% block main %}
+    <section>
+        <div class="d-flex flex-column">
+            <h1>{{username}}'s stock history</h1>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Action</th>
+                    <th scope="col">Shares</th>
+                    <th scope="col">Total Value</th>
+                    <th scope="col">Time of Transaction</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for transaction in history%}
+                  <tr>
+                    <td>{{transaction["symbol"]}}</td>
+                    <td>{{transaction["type"]}}</td>
+                    <td>{{transaction["shares"]}}</td>
+                    <td>{{transaction["price"]}}</td>
+                    <td>{{transaction["timestamp"]}}</td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+        </div>
+
+    </section>
+
+{% endblock %}

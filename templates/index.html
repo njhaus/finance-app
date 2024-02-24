@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    CS$50
+{% endblock %}
+
+{% block main %}
+    <section>
+        <div class="d-flex flex-column">
+            <h1>{{username}}'s stocks</h1>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Stock</th>
+                    <th scope="col">Shares Owned</th>
+                    <th scope="col">Current Price</th>
+                    <th scope="col">Total Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for stock in stocks%}
+                  <tr>
+                    <td>{{stock["symbol"]}}</td>
+                    <td>{{stock["number"]}}</td>
+                    <td>{{stock["price"]}}</td>
+                    <td>{{stock["total"]}}</td>
+                  </tr>
+                  {%endfor%}
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">Cash</th>
+                    <td> {{cash}}</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <th scope="row">TOTAL</th>
+                    <td> {{totalValue}}</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+
+    </section>
+
+{% endblock %}
