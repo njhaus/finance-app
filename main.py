@@ -8,11 +8,10 @@ import sys
 import os
 
 # Add current directory to the Python path
-print('append filename')
 sys.path.append(os.path.dirname(__file__))
 
 
-print('app is found at least')
+print('app is found')
 # from helpers import apology, login_required, lookup, usd
 from helpers import apology, login_required, lookup, usd
 
