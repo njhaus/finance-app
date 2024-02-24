@@ -124,7 +124,7 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         existingUser = db.execute("SELECT * FROM users WHERE username = ?", username)
-        hashedPassword = generate_password_hash(password, method='pbkdf2', salt_length=16)
+        hashedPassword = generate_password_hash(password, salt_length=16)
 
         if not username or not password or not password == confirmation:
             return apology("Invalid username or password. Please try again", 400)
