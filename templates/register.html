@@ -5,18 +5,22 @@
 {% endblock %}
 
 {% block main %}
-    <form action="/register" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text" required>
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="password" minlength="4" name="password" placeholder="Password" type="password" required>
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" id="confirmation" minlength="4" name="confirmation" placeholder="Confirm password" type="password" required>
-        </div>
-        <button class="btn btn-primary" id="submit-btn" type="submit" disabled>Register</button>
-    </form>
+    <section>
+        <h1>Register</h1>    
+        <form action="/register" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text" required>
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="password" minlength="4" name="password" placeholder="Password" type="password" required>
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="confirmation" minlength="4" name="confirmation" placeholder="Confirm password" type="password" required>
+            </div>
+            <button class="btn btn-primary" id="submit-btn" type="submit" disabled>Register</button>
+        </form>
+        <p>Already have an account? <a href="/login">Click Here</a> to log in.</p>
+    </section>
     <script>
         const usernameInput = document.querySelector('#username');
         const passwordInput = document.querySelector('#password');
